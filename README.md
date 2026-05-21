@@ -1,21 +1,47 @@
-# Reelax Assignment
+# Pixel-Perfect React Dashboard Assignment
 
-A responsive React dashboard implementation for the Reelax frontend assignment. The project is built with Vite, React, Tailwind CSS, functional components, React hooks, and Lucide React icons.
+A high-fidelity, responsive implementation of the Reelax design assignment using React JS and Tailwind CSS.
 
-## Tech Stack
+## Live Demo
 
-- React JS with Vite
-- Tailwind CSS with custom design tokens
-- Lucide React icons
-- Functional components and hooks
-- Semantic, responsive dashboard layout
+- **Hosted App:** [https://reelax-assignment-ashy-one.vercel.app](https://reelax-assignment-ashy-one.vercel.app)
+- **GitHub Repository:** [https://github.com/rsurya1304/reelaxAssignement](https://github.com/rsurya1304/reelaxAssignement)
 
-## Local Setup
+## Tech Stack & Key Choices
 
-```bash
-npm install
-npm run dev
-```
+- **Build Engine:** Vite for fast development and optimized production bundles
+- **Framework:** React JS with functional components
+- **Styling:** Tailwind CSS with centralized custom design tokens
+- **Icons:** Lucide React
+- **State:** React hooks for search input, tabs, coupons, and mobile navigation
+- **Architecture:** Modular component structure with reusable UI atoms and section-level components
+
+## How to Run Locally
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/rsurya1304/reelaxAssignement.git
+   cd reelaxAssignement
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open the local app:**
+
+   ```text
+   http://127.0.0.1:5173
+   ```
 
 ## Production Build
 
@@ -24,26 +50,36 @@ npm run build
 npm run preview
 ```
 
-## Vercel Deployment
+## Vercel Deployment Steps
 
-1. Push the project to a GitHub repository.
-2. Open Vercel and choose `Add New Project`.
-3. Import the repository.
-4. Keep the default Vite settings:
-   - Build command: `npm run build`
-   - Output directory: `dist`
+1. Push the project to GitHub.
+2. Open Vercel and select `Add New Project`.
+3. Import the GitHub repository.
+4. Use the default Vite settings:
+   - **Build Command:** `npm run build`
+   - **Output Directory:** `dist`
 5. Click `Deploy`.
 
-## Architecture
+## Project Structure
 
-The application is split into reusable UI atoms, navigation components, layout components, page-level composition, hooks, and utility data. Dashboard content is data-driven through `src/utils/constants.js`, making it simple to update labels, metrics, rows, and navigation without touching layout code.
+```text
+src/
+├── assets/
+│   ├── icons/
+│   └── images/
+├── components/
+│   ├── common/
+│   ├── layout/
+│   ├── navigation/
+│   └── sections/
+├── hooks/
+├── pages/
+├── utils/
+├── App.jsx
+├── index.css
+└── main.jsx
+```
 
-## Responsive Strategy
+## Implementation Summary
 
-- Mobile uses a slide-out sidebar and single-column content.
-- Tablet uses compact cards and adaptive grids.
-- Desktop uses a fixed sidebar, sticky header, four-column metrics, and a two-column analytics area.
-
-## Notes
-
-The Figma link may require account access. Design tokens are centralized in `tailwind.config.js` so exact colors, spacing, radii, and shadows from Figma Inspect can be adjusted quickly when those values are available.
+The app recreates the visible Figma checkout screen with a compact search/action header, billing details form, order summary card, wallet balance, coupon selection, total calculation, and payment action. Components are reusable, data is separated into utility constants, and the layout adapts across mobile, tablet, and desktop widths.
